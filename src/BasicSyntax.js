@@ -36,14 +36,12 @@ export function romanToInteger(str) {
                 break;
         }
         if (current > prev) {
-            // Undo the addition that was done, turn it into subtraction
             result -= 2 * value;
         }
         if (current !== prev) {
-            // Different symbol?
-            value = 0; // reset the sum for the new symbol
+            value = 0;
         }
-        value += current; // keep adding same symbols
+        value += current;
         result += current;
         prev = current;
         current = 0;
